@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+
+@import './app/app-theme';
+@import './app/shared/component/page-header/page-header-theme';
+
+// Styles for the docs app that are based on the current theme.
+@mixin gumuz-app-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $next-theme: mat-palette($mat-red);
+
+  .gumuz-app-background {
+    background: mat-color($background, background);
+  }
+
+  .gumuz-primary-header {
+    background: mat-color($primary);
+
+    h1 {
+      color: mat-color($primary, default-contrast);
+    }
+  }
+
+  .gumuz-footer {
+    background: mat-color($primary);
+    color: mat-color($primary, default-contrast);
+  }
+
+  @include app-theme($theme);
+  @include page-header-theme($theme);
+
+}
+
+// Define the light theme.
+$primary: mat-palette($mat-indigo);
+$accent:  mat-palette($mat-pink, A200, A100, A400);
+
+$theme: mat-light-theme($primary, $accent);

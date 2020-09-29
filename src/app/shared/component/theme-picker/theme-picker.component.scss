@@ -1,0 +1,76 @@
+@import "../../../../mixins";
+// .gumuz-theme-picker-menu {
+//   .mat-menu-item {
+//     .mat-icon.theme-icon {
+//       margin-right: 0;
+//       margin-left: 8px;
+//       float: right;
+
+//       svg {
+//         vertical-align: middle;
+//       }
+
+//       // The below colors need to align with the themes defined in ThemePicker
+//       &.deeppurple-amber svg {
+//         .gumuz-theme-icon-background {
+//           fill: #fafafa;
+//         }
+//         .gumuz-theme-icon-button {
+//           fill: #FFC107;
+//         }
+//         .gumuz-theme-icon-toolbar {
+//           fill: #673AB7;
+//         }
+//       }
+
+//       &.indigo-pink svg {
+//         .gumuz-theme-icon-background {
+//           fill: #fafafa;
+//         }
+//         .gumuz-theme-icon-button {
+//           fill: #E91E63;
+//         }
+//         .gumuz-theme-icon-toolbar {
+//           fill: #3F51B5;
+//         }
+//       }
+
+//       &.pink-bluegrey svg {
+//         .gumuz-theme-icon-background {
+//           fill: #303030;
+//         }
+//         .gumuz-theme-icon-button {
+//           fill: #607D8B;
+//         }
+//         .gumuz-theme-icon-toolbar {
+//           fill: #E91E63;
+//         }
+//       }
+
+//       &.purple-green svg {
+//         .gumuz-theme-icon-background {
+//           fill: #303030;
+//         }
+//         .gumuz-theme-icon-button {
+//           fill: #4CAF50;
+//         }
+//         .gumuz-theme-icon-toolbar {
+//           fill: #9C27B0;
+//         }
+//       }
+//     }
+//   }
+// }
+
+.theme-item {
+  span {
+    margin: 0 10px;
+    @include flex(1);
+  }
+}
+
+.mat-icon.theme-icon {
+  svg {
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,66 @@
+@import "~@angular/material/theming";
+@import "../_mixins.scss";
+@import "../_theme.scss";
+
+mat-sidenav-container,
+mat-sidenav-content,
+.mat-drawer.mat-sidenav {
+  padding-top: 28px;
+}
+
+mat-toolbar {
+  @include flexbox;
+  @include justify-content(space-between);
+  position: fixed;
+  z-index: 999;
+}
+
+.drawer-menu--container,
+.toolbar-actions {
+  @include flexbox;
+  @include align-items(center);
+  color: #ffffff;
+
+  button {
+    margin-left: 5px;
+  }
+}
+
+.profile {
+  content: "";
+  width: 40px;
+  height: 40px;
+  margin-left: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+}
+
+mat-nav-list {
+  padding-top: 0px;
+}
+
+mat-sidenav {
+  padding-top: 0;
+  width: 20%;
+  min-width: 250px;
+}
+
+.drawer-nav {
+  mat-icon {
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 756px) {
+  mat-sidenav-container,
+  mat-sidenav-content,
+  .mat-drawer.mat-sidenav {
+    padding-top: 32px;
+  }
+}

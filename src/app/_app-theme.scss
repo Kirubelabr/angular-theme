@@ -1,0 +1,56 @@
+@mixin app-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $is-dark-theme: map-get($theme, is-dark);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  app-root {
+    .app-navbar {
+      background: mat-color($primary);
+    }
+
+    .gumuz-header-background {
+      background: mat-color($primary);
+    }
+
+    .gumuz-header-headline {
+      color: mat-color($primary, default-contrast);
+    }
+
+    .gumuz-profile {
+      background: mat-color($foreground, secondary-text);
+    }
+
+    .gumuz-header-start {
+      color: mat-color($primary);
+
+      .gumuz-link {
+        color: mat-color($primary, default-contrast);
+      }
+    }
+
+    .gumuz-homepage-row {
+      color: mat-color($foreground, secondary-text);
+    }
+    a.active {
+      background-color: rgba(mat-color($primary, default), 0.15);
+      color: lighten(
+        mat-color($primary, default),
+        if($is-dark-theme, 25%, 0)
+      ) !important;
+      font-weight: 500;
+    }
+
+    a.active:hover {
+      background: rgba(mat-color($primary, default), 0.3);
+    }
+
+    .title-divider {
+      padding: 10px 16px;
+      margin: 0;
+      color: mat-color($foreground, secondary-text);
+    }
+  }
+}

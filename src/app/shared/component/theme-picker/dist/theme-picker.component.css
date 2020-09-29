@@ -1,0 +1,12 @@
+.theme-item span {
+  margin: 0 10px;
+  -webkit-box: 1;
+  -moz-box: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.mat-icon.theme-icon svg {
+  vertical-align: middle;
+}

@@ -1,0 +1,120 @@
+<app-page-header [pageTitle]="'Users'"></app-page-header>
+<div class="col fade-in" *ngIf="showForm">
+  <div class="d-flex justify-content-center mt-4">
+    <div class="col-sm-12">
+      <mat-card class="primary-form">
+        <mat-card-header>
+          <mat-card-title>Add User</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form [formGroup]="userForm">
+            <app-text-input
+              [fGroupName]="userForm"
+              [label]="'First Name'"
+              [controlName]="'firstName'"
+              [hint]="'John'"
+              [isRequired]="true"
+              [hasMinLength]="true"
+              [minLengthValue]="2"
+              [hasMaxLength]="true"
+              [maxLengthValue]="20"
+              [placeholder]="'Enter first name'"
+            ></app-text-input>
+
+            <app-text-input
+              [fGroupName]="userForm"
+              [label]="'Middle Name'"
+              [controlName]="'middleName'"
+              [hint]="'Joshua'"
+              [isRequired]="true"
+              [hasMinLength]="true"
+              [minLengthValue]="2"
+              [hasMaxLength]="true"
+              [maxLengthValue]="20"
+            ></app-text-input>
+
+            <app-text-input
+              [fGroupName]="userForm"
+              [label]="'Last Name'"
+              [controlName]="'lastName'"
+              [hint]="'Doe'"
+              [isRequired]="true"
+              [hasMinLength]="true"
+              [minLengthValue]="2"
+              [hasMaxLength]="true"
+              [maxLengthValue]="20"
+            ></app-text-input>
+
+            <app-text-input
+              [fGroupName]="userForm"
+              [label]="'Email'"
+              [controlName]="'email'"
+              [hint]="'john@example.com'"
+              [isRequired]="true"
+              [isEmail]="true"
+            ></app-text-input>
+            <div class="mt-3">
+              <mat-form-field appearance="fill">
+                <mat-label>Department</mat-label>
+                <mat-select formControlName="department">
+                  <mat-option
+                    *ngFor="let dept of departments"
+                    [value]="dept.id"
+                  >
+                    {{ dept.departmentName }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="toggleUserForm()">Cancel</button>
+          <button
+            mat-raised-button
+            color="accent"
+            [disabled]="userForm.invalid"
+          >
+            Save User
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<div *ngIf="!showForm" class=" fade-in">
+  <div class="row table-actions">
+    <button mat-raised-button color="accent" (click)="toggleUserForm()">
+      <mat-icon class="mat-18">add</mat-icon>
+      Create User
+    </button>
+  </div>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.position }} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.weight }} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.symbol }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>

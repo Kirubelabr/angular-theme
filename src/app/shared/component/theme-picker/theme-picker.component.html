@@ -1,0 +1,36 @@
+<button
+  mat-icon-button
+  [mat-menu-trigger-for]="themeMenu"
+  aria-label="Select a theme"
+>
+  <mat-icon>format_color_fill</mat-icon>
+</button>
+
+<mat-menu
+  #themeMenu="matMenu"
+  xPosition="before"
+  class="gumuz-theme-picker-menu"
+>
+  <button
+    mat-menu-item
+    *ngFor="let theme of themes"
+    (click)="selectTheme(theme.name)"
+  >
+    <div class="theme-item d-flex align-items-center justify-content-between">
+      <mat-icon
+        [ngClass]="{ 'gumuz-theme-selected-icon': currentTheme === theme }"
+        [color]="currentTheme === theme ? 'accent' : undefined"
+      >
+        {{
+          currentTheme === theme
+            ? "radio_button_checked"
+            : "radio_button_unchecked"
+        }}
+      </mat-icon>
+      <span>{{ theme.displayName }}</span>
+      <div [class]="'theme-selector ' + theme.name">
+        <mat-icon class="theme-icon" svgIcon="theme-icon"></mat-icon>
+      </div>
+    </div>
+  </button>
+</mat-menu>
