@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NavPages } from './shared/model/nav-list';
 import { ThemeService } from './shared/helper/theme.service';
 import { Observable, Subscription } from 'rxjs';
 import { ThemeOption } from './shared/model/theme-options.model';
@@ -23,7 +22,7 @@ export class AppComponent implements OnInit {
     Array<ThemeOption>
   > = this.themeService.getThemeOptions();
 
-  pages: any[] = NavPages;
+  pages: any[] = [];
 
   constructor(
     private themeService: ThemeService,

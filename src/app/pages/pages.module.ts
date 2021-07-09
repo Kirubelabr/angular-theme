@@ -5,13 +5,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { NonAdminRoutingModule } from './non-admin-routing.module';
-import { UserComponent } from './user/user.component';
+import { PagesRoutingModule } from './pages-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { MessageComponent } from './message/message.component';
-import { NoticeComponent } from './notice/notice.component';
-import { ReminderComponent } from './reminder/reminder.component';
-import { NotificationComponent } from './notification/notification.component';
 import { SharedModule } from '../shared/shared.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -25,16 +20,11 @@ import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
-    UserComponent,
     DashboardComponent,
-    MessageComponent,
-    NoticeComponent,
-    NotificationComponent,
-    ReminderComponent,
   ],
   imports: [
     CommonModule,
-    NonAdminRoutingModule,
+    PagesRoutingModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -50,4 +40,4 @@ import { MatIconModule } from '@angular/material/icon';
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
   ],
 })
-export class NonAdminModule {}
+export class PagesModule {}

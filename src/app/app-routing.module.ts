@@ -1,11 +1,16 @@
-import { SettingComponent } from './shared/component/setting/setting.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'settings',
-    component: SettingComponent
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/home'
+  },
+  {
+    path: 'home',
+    component: DashboardComponent
   }
 ];
 

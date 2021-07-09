@@ -4,11 +4,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NonAdminModule } from './non-admin/non-admin.module';
+import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -23,14 +21,12 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NonAdminModule,
+    PagesModule,
     SharedModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatToolbarModule,
     MatIconModule,
-    MatSidenavModule,
     MatListModule,
     MatRippleModule,
     MatMenuModule,
@@ -38,9 +34,7 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
   ],
   exports: [
     MatButtonModule,
-    MatToolbarModule,
     MatIconModule,
-    MatSidenavModule,
     MatListModule,
     MatRippleModule,
     MatMenuModule,
